@@ -7,6 +7,10 @@
 # Name of this project
 name: ansible-role-docker
 
+# Tags of this project
+tags:
+  - ansible
+
 email:
   support: support@hadenlabs.com
 
