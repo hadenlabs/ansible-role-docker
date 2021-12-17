@@ -1,0 +1,9 @@
+---
+- name: Install docker package dependencies
+  package: name="{{ item }}" state=present
+  become: true
+  with_items: '{{ docker_packages | default([]) }}'
+  register: install_docker_packages
+  when: docker_packages is defined
+  tags:
+    - docker-install
