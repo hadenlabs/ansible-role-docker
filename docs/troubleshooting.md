@@ -1,3 +1,13 @@
+<!-- Space: AnsibleRoleDocker -->
+<!-- Parent: Project -->
+<!-- Title: Troubleshooting -->
+
+<!-- Label: AnsibleRoleDocker -->
+<!-- Label: Project -->
+<!-- Label: Troubleshooting -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 # Troubleshooting
 
 ## Environment
