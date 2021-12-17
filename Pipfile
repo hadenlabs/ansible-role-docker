@@ -20,9 +20,7 @@ pydocstyle = "*"
 pygments = "*"
 pylint = "*"
 pymdown-extensions = "*"
-ansible = "*"
-docker = "*"
-molecule = "*"
+molecule = {extras = ["docker", "lint"], version = "*"}
 
 [packages]
 
