@@ -1,0 +1,9 @@
+---
+# vars file for docker
+
+_docker_package_dependencies:
+  - 'vim'
+  - 'ca-certificates'
+  - 'curl'
+  - 'gnupg'
+  - 'lsb-release'
