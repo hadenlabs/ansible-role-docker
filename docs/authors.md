@@ -1,6 +1,12 @@
 <!-- Space: AnsibleRoleDocker -->
 <!-- Parent: Project -->
-<!-- Title: Authors -->
+<!-- Title: Project Authors -->
+
+<!-- Label: AnsibleRoleDocker -->
+<!-- Label: Project -->
+<!-- Label: Authors -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
 
 # Authors
 
