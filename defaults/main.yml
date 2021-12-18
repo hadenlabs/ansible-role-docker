@@ -11,8 +11,10 @@ docker_restart_handler_state: restarted
 
 # Docker Compose options.
 docker_install_compose: true
-docker_compose_version: '1.29.0'
-docker_compose_url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64
+docker_compose_version: '2.0.1'
+
+docker_compose_architecture: "{{ ansible_architecture }}"
+docker_compose_url: "https://github.com/docker/compose/releases/download/v{{ docker_compose_version }}/docker-compose-linux-{{ docker_compose_architecture }}"
 docker_compose_path: /usr/local/bin/docker-compose
 
 # Docker repo URL.
