@@ -3,12 +3,6 @@
   when:
     - ansible_os_family | lower  == 'debian'
 
-- name: install docker
-  apt: name={{ item }} state=latest
-  with_items:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
 
 - name: enable and start docker
   service: name=docker state=started enabled=yes

@@ -13,33 +13,22 @@
       - ca-certificates
     state: present
 
-- name: check file docker-archive-keyring.gpg
-  stat:
-    path: /usr/share/keyrings/docker-archive-keyring.gpg
-  register: keyring_gpg
+- name: Return installed docker
+  ansible.builtin.command: which docker
+  register: docker
 
-- name: Ensure additional dependencies are installed (on Ubuntu < 20.04 and any other systems).
-  apt:
-    name: gnupg2
-    state: present
-  when: ansible_distribution | lower != 'ubuntu' or ansible_distribution_version is version('20.04', '<')
+- name: Install docker.
+  block:
+    - name: download docker
+      get_url:
+        url: https://get.docker.com
+        force: true
+        dest: /tmp/get-docker.sh
+        mode: "0100"
 
-- name: Ensure additional dependencies are installed (on Ubuntu >= 20.04).
-  apt:
-    name: gnupg
-    state: present
-  when: ansible_distribution | lower == 'ubuntu' or ansible_distribution_version is version('20.04', '>=')
+    - name: install docker
+      ansible.builtin.command: /tmp/get-docker.sh
 
-- name: Add Docker apt key.
-  shell: >
-    curl -fsSL {{ docker_apt_gpg_key }} | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-  args:
-    warn: false
-  when: not keyring_gpg.stat.exists
-
-- name: Add docker.list
-  shell: >
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
-
-- name: updates server
-  apt: update_cache=yes
+    - name: newgrp docker
+      ansible.builtin.command: newgrp docker
+  when: not docker
