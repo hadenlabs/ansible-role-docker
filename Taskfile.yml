@@ -14,6 +14,7 @@ includes:
   prettier: ./provision/task/prettier.yml
   sonar: ./provision/task/sonar.yml
   diagrams: ./provision/diagrams/Taskfile.yml
+  molecule: ./provision/task/molecule.yml
 
 env:
   DOCKER:
