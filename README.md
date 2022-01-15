@@ -32,7 +32,7 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 ## Usage
 
 ```bash
-  ansible-galaxy install hadenlabs.ansible-role-docker
+  ansible-galaxy install hadenlabs.docker
 ```
 
 Full working examples can be found in [examples](./examples) folder.
@@ -58,7 +58,7 @@ To run this playbook with default settings, for install package like this:
     docker_compose_version: '1.29.0'
 
   roles:
-    - devops-toolkit.docker
+    - hadenlabs.docker
 ```
 
 ## Requirements
@@ -98,7 +98,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2022 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 
