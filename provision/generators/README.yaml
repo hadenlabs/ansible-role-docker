@@ -58,7 +58,7 @@ description: |-
 # How to use this project
 usage: |-
   ```bash
-    ansible-galaxy install hadenlabs.ansible-role-docker
+    ansible-galaxy install hadenlabs.docker
   ```
 
   Full working examples can be found in [examples](./examples) folder.
