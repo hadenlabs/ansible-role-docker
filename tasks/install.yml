@@ -3,7 +3,6 @@
   when:
     - ansible_os_family | lower  == 'debian'
 
-
 - name: enable and start docker
   service: name=docker state=started enabled=yes
   when: ansible_virtualization_type != "docker"
