@@ -17,5 +17,5 @@ To run this playbook with default settings, for install package like this:
     docker_compose_version: '1.29.0'
 
   roles:
-    - devops-toolkit.docker
+    - hadenlabs.docker
 ```
