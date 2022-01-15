@@ -1,12 +1,16 @@
 ---
-- include: include_vars.yml
+- include_tasks: include_vars.yml
 
-- include: dependences.yml
+- name: Update apt cache.
+  apt: update_cache=yes cache_valid_time=600
+  when: ansible_os_family == 'Debian'
 
-- include: install.yml
+- include_tasks: dependences.yml
 
-- include: permissions.yml
+- include_tasks: install.yml
+
+- include_tasks: permissions.yml
   when: docker_users | length > 0
 
-- include: post_install.yml
+- include_tasks: post_install.yml
   when: docker_install_compose | bool

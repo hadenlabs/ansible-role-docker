@@ -1,8 +1,9 @@
 ---
 - name: Install docker package dependencies
-  package: name="{{ item }}" state=present
+  ansible.builtin.package:
+    name: '{{ docker_packages }}'
+    state: present
   become: true
-  with_items: '{{ docker_packages | default([]) }}'
   register: install_docker_packages
   when: docker_packages is defined
   tags:

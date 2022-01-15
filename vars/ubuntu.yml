@@ -1,4 +1,4 @@
 ---
-# vars file for devops-toolkit.ansible-role-docker (Ubuntu specific)
+# vars file for hadenlabs.ansible-role-docker (Ubuntu specific)
 
 _root_group: root
