@@ -2,7 +2,7 @@
 - include_tasks: include_vars.yml
 
 - name: Update apt cache.
-  apt: update_cache=yes cache_valid_time=600
+  apt: update_cache=yes force_apt_get=yes
   when: ansible_os_family == 'Debian'
 
 - include_tasks: dependences.yml
